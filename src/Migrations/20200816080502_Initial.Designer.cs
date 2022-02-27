@@ -8,7 +8,7 @@ using OllsMart;
 
 namespace OllsMart.Migrations
 {
-    [DbContext(typeof(OllsMartContext))]
+    [DbContext(typeof(ClapponContext))]
     [Migration("20200816080502_Initial")]
     partial class Initial
     {

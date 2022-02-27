@@ -8,9 +8,9 @@ namespace ollsmart.Services
 {
     public class CategoryService : ICategoryService
     {
-        private OllsMartContext _dbContext;
+        private ClapponContext _dbContext;
 
-        public CategoryService(OllsMartContext ollsMartContext)
+        public CategoryService(ClapponContext ollsMartContext)
         {
             _dbContext = ollsMartContext;
         }

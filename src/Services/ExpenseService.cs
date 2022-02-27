@@ -8,9 +8,9 @@ namespace ollsmart.Services
 {
     public class ExpenseService : IExpenseService
     {
-        private OllsMartContext _dbContext;
+        private ClapponContext _dbContext;
 
-        public ExpenseService(OllsMartContext ollsMartContext)
+        public ExpenseService(ClapponContext ollsMartContext)
         {
             _dbContext = ollsMartContext;
         }

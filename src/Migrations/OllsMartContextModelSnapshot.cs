@@ -7,7 +7,7 @@ using OllsMart;
 
 namespace OllsMart.Migrations
 {
-    [DbContext(typeof(OllsMartContext))]
+    [DbContext(typeof(ClapponContext))]
     partial class OllsMartContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

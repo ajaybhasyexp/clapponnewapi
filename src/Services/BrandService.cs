@@ -8,9 +8,9 @@ namespace ollsmart.Services
 {
     public class BrandService : IBrandService
     {
-        private OllsMartContext _dbContext;
+        private ClapponContext _dbContext;
 
-        public BrandService(OllsMartContext ollsMartContext)
+        public BrandService(ClapponContext ollsMartContext)
         {
             _dbContext = ollsMartContext;
         }

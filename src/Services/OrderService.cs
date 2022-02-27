@@ -8,9 +8,9 @@ namespace ollsmart.Services
 {
     public class OrderService : IOrderService
     {
-        private OllsMartContext _dbContext;
+        private ClapponContext _dbContext;
 
-        public OrderService(OllsMartContext ollsMartContext)
+        public OrderService(ClapponContext ollsMartContext)
         {
             _dbContext = ollsMartContext;
         }

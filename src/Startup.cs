@@ -36,7 +36,7 @@ namespace OllsMart
             services.AddControllersWithViews();
             // Register the Swagger generator, defining 1 or more Swagger documents
 
-            services.AddDbContext<OllsMartContext>((_services, options) =>
+            services.AddDbContext<ClapponContext>((_services, options) =>
             {
                 var configuration = (ConfigurationService)_services.GetService(typeof(ConfigurationService));
                 var logger = (ILogger<Startup>)_services.GetService(typeof(ILogger<Startup>));
