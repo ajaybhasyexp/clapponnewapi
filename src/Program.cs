@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
-using OllsMart;
+using Clappon;
 
-namespace ollsmart
+namespace Clappon
 {
     public class Program
     {

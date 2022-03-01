@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ollsmart.Controllers
+namespace Clappon.Controllers
 {
     [ApiController]
     [Route("[controller]")]

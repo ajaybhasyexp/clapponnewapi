@@ -1,18 +1,18 @@
 ﻿using Models.Entities;
-using OllsMart;
+using Clappon;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace ollsmart.Services
+namespace Clappon.Services
 {
     public class UserService : IUserService
     {
         private ClapponContext _dbContext;
 
-        public UserService(ClapponContext ollsMartContext)
+        public UserService(ClapponContext ClapponContext)
         {
-            _dbContext = ollsMartContext;
+            _dbContext = ClapponContext;
         }
 
         public List<UserRole>  GetUserRoles()

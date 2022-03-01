@@ -1,19 +1,19 @@
 using Models.Entities;
-using OllsMart;
+using Clappon;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace ollsmart.Services
+namespace Clappon.Services
 {
     public class ProductService : IProductService
     {
         private ClapponContext _dbContext;
 
-        public ProductService(ClapponContext ollsMartContext)
+        public ProductService(ClapponContext ClapponContext)
         {
-            _dbContext = ollsMartContext;
+            _dbContext = ClapponContext;
         }
 
         public Product SaveProduct(Product product)

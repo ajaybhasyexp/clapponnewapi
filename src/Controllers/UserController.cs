@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Models.Entities;
-using ollsmart.Services;
+using Clappon.Services;
 using System;
 using Microsoft.Extensions.Logging;
 
 
-namespace ollsmart.Controllers
+namespace Clappon.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

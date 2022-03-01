@@ -1,18 +1,18 @@
 using Models.Entities;
-using OllsMart;
+using Clappon;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace ollsmart.Services
+namespace Clappon.Services
 {
     public class OrderService : IOrderService
     {
         private ClapponContext _dbContext;
 
-        public OrderService(ClapponContext ollsMartContext)
+        public OrderService(ClapponContext ClapponContext)
         {
-            _dbContext = ollsMartContext;
+            _dbContext = ClapponContext;
         }
         public OrderHeader GetOrderById(int id)
         {

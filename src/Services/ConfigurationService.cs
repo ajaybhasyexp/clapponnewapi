@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace OllsMart.Services
+namespace Clappon.Services
 {
     public class ConfigurationService
     {

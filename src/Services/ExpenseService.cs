@@ -1,18 +1,18 @@
 using Models.Entities;
-using OllsMart;
+using Clappon;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace ollsmart.Services
+namespace Clappon.Services
 {
     public class ExpenseService : IExpenseService
     {
         private ClapponContext _dbContext;
 
-        public ExpenseService(ClapponContext ollsMartContext)
+        public ExpenseService(ClapponContext ClapponContext)
         {
-            _dbContext = ollsMartContext;
+            _dbContext = ClapponContext;
         }
         
         public List<ExpenseHead>  GetAllExpenseHeads()

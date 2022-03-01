@@ -4,12 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Models.Entities;
-using ollsmart.Services;
+using Clappon.Services;
 using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace ollsmart.Controllers
+namespace Clappon.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

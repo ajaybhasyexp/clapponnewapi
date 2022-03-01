@@ -1,18 +1,18 @@
 using Models.Entities;
-using OllsMart;
+using Clappon;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace ollsmart.Services
+namespace Clappon.Services
 {
     public class UnitService : IUnitService
     {
         private ClapponContext _dbContext;
 
-        public UnitService(ClapponContext ollsMartContext)
+        public UnitService(ClapponContext ClapponContext)
         {
-            _dbContext = ollsMartContext;
+            _dbContext = ClapponContext;
         }
         public List<Unit>  GetAll()
         {

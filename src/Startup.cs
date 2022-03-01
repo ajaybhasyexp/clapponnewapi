@@ -1,18 +1,15 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using OllsMart.Services;
-using ollsmart.Services;
+using Clappon.Services;
 
 
 
-
-namespace OllsMart
+namespace Clappon
 {
     public class Startup
     {
@@ -49,11 +46,11 @@ namespace OllsMart
                 }
 
                 logger.LogInformation($"Connection string: {connectionString}");
-                options.UseMySQL(connectionString,
-                    mySqlOptions =>
-                    {
-                        mySqlOptions.MigrationsAssembly("OllsMart");
-                    });
+                //options.UseMySQL(connectionString,
+                //    mySqlOptions =>
+                //    {
+                //        mySqlOptions.MigrationsAssembly("Clappon");
+                //    });
             });
             services.AddSwaggerGen();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
