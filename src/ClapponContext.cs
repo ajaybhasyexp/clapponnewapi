@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Models.Entities;
 
 namespace Clappon
@@ -19,23 +18,10 @@ namespace Clappon
         public DbSet<OrderHeader> OrderHeaders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
-        // public DbSet<InvoiceHeader> InvoiceHeaders {get;set;}
-        // public DbSet<InvoiceDetail> InvoiceDetails {get;set;}
-
         public DbSet<ProductAttributeProperty> ProductAttributeProperties { get; set; }
 
-        private IConfiguration _config;
-
-        public ClapponContext(DbContextOptions<ClapponContext> options,
-        IConfiguration configuration) : base(options)
+        public ClapponContext(DbContextOptions<ClapponContext> options) : base(options)
         {
-            _config = configuration;
-        }
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var connectionString = _config.GetConnectionString("Local");
-            optionsBuilder.UseMySQL(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

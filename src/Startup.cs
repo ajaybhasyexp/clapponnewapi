@@ -6,8 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Clappon.Services;
-
-
+using System;
 
 namespace Clappon
 {
@@ -31,27 +30,21 @@ namespace Clappon
             services.AddTransient<IExpenseService, ExpenseService>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddControllersWithViews();
-            // Register the Swagger generator, defining 1 or more Swagger documents
 
-            services.AddDbContext<ClapponContext>((_services, options) =>
-            {
-                var configuration = (ConfigurationService)_services.GetService(typeof(ConfigurationService));
-                var logger = (ILogger<Startup>)_services.GetService(typeof(ILogger<Startup>));
-                var connectionString = Configuration.GetConnectionString("Local");
+            var connectionString = Configuration.GetConnectionString("Local");
+            var serverVersion = ServerVersion.AutoDetect(connectionString);
 
-                if (string.IsNullOrEmpty(connectionString))
-                {
-                    logger.LogWarning("Connection string is not resolved.");
-                    return;
-                }
+            services.AddDbContext<ClapponContext>(
+            dbContextOptions => dbContextOptions
+                .UseMySql(connectionString, serverVersion)
+                // The following three options help with debugging, but should
+                // be changed or removed for production.
+                .LogTo(Console.WriteLine, LogLevel.Information)
+                .EnableSensitiveDataLogging()
+                .EnableDetailedErrors()
+        );
 
-                logger.LogInformation($"Connection string: {connectionString}");
-                //options.UseMySQL(connectionString,
-                //    mySqlOptions =>
-                //    {
-                //        mySqlOptions.MigrationsAssembly("Clappon");
-                //    });
-            });
+            // Register the Swagger generator, defining 1 or more Swagger documents          
             services.AddSwaggerGen();
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
@@ -84,10 +77,7 @@ namespace Clappon
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            if (!env.IsDevelopment())
-            {
-                app.UseSpaStaticFiles();
-            }
+
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();
 
