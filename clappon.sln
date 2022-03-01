@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ollsmart", "src\ollsmart.csproj", "{72FF3A83-C307-41B7-85A1-222557AA4F27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "clappon", "src\clappon.csproj", "{72FF3A83-C307-41B7-85A1-222557AA4F27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
